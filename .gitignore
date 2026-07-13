@@ -1,0 +1,77 @@
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+
+# Testing / coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Source PDF (large, downloadable from source URL)
+Gistda_Price_List.pdf
+
+# Data / models (large / generated) — adjust as needed
+*.tif
+*.tiff
+*.geotiff
+*.gpkg
+*.shp
+*.dbf
+*.shx
+*.sbn
+*.sbx
+data/raw/
+data/interim/
+outputs/
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.h5

@@ -1,0 +1,28 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+
+  // ล้างตัวแปร conda/venv ที่ค้างมาจาก process แม่ของ VSCode
+  "terminal.integrated.env.windows": {
+    "VIRTUAL_ENV": null,
+    "CONDA_DEFAULT_ENV": null,
+    "CONDA_PREFIX": null,
+    "CONDA_PROMPT_MODIFIER": null,
+    "CONDA_SHLVL": null
+  },
+
+  // Terminal profile ที่บังคับ activate .venv ทุกครั้งที่เปิดเทอร์มินัลใหม่
+  "terminal.integrated.profiles.windows": {
+    "PowerShell (.venv)": {
+      "source": "PowerShell",
+      "args": [
+        "-NoExit",
+        "-Command",
+        "& 'd:\\GEO_AI\\.venv\\Scripts\\Activate.ps1'"
+      ],
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell (.venv)"
+}
