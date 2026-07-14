@@ -18,8 +18,10 @@
       "source": "PowerShell",
       "args": [
         "-NoExit",
+        "-ExecutionPolicy",
+        "Bypass",
         "-Command",
-        "& 'd:\\GEO_AI\\.venv\\Scripts\\Activate.ps1'"
+        "& '${workspaceFolder}\\.venv\\Scripts\\Activate.ps1'"
       ],
       "icon": "terminal-powershell"
     }
