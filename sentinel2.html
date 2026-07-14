@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_56586be7249f09255d3ff0e342115c7a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 12px; left: 60px; z-index: 9999;
+     background: rgba(255,255,255,.95); padding: 8px 14px; border-radius: 8px;
+     box-shadow: 0 2px 10px rgba(0,0,0,.25); font-family: 'Segoe UI',Tahoma,sans-serif;">
+  <b style="color:#1a3d5c;">🛰️ Sentinel-2 ประเทศไทย 2026</b><br>
+  <span style="font-size:12px;color:#5a6b7a;">Median ปลอดเมฆ · 2026-01-01 → 2026-07-15 · ภาพจริง B4/B3/B2</span>
+</div>
+    
+            <div class="folium-map" id="map_56586be7249f09255d3ff0e342115c7a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_56586be7249f09255d3ff0e342115c7a = L.map(
+                "map_56586be7249f09255d3ff0e342115c7a",
+                {
+                    center: [13.2, 101.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_56586be7249f09255d3ff0e342115c7a);
+
+            
+
+        
+    
+            var tile_layer_23f71bbf8a9c549d7dc72a4b5c9bcf36 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=s\u0026x={x}\u0026y={y}\u0026z={z}",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "Google",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_23f71bbf8a9c549d7dc72a4b5c9bcf36.addTo(map_56586be7249f09255d3ff0e342115c7a);
+        
+    
+            var tile_layer_8a862c8264892aa66a6763b60505d673 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=y\u0026x={x}\u0026y={y}\u0026z={z}",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "Google",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8a862c8264892aa66a6763b60505d673.addTo(map_56586be7249f09255d3ff0e342115c7a);
+        
+    
+            var tile_layer_59c813d419b08112fc57b8f3fdcbcbeb = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ponlawit-pryurachatuporn/maps/ee2faf2273c8ef7d326fee35c0566ec8-e99c0c1814ab8280bb71265a2d772689/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_59c813d419b08112fc57b8f3fdcbcbeb.addTo(map_56586be7249f09255d3ff0e342115c7a);
+        
+    
+            var tile_layer_30af0b276d76b7ac4add4d5b7ced478e = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ponlawit-pryurachatuporn/maps/9d53e58f30d8bef8c561321c7571dcd9-dfdb6323703449864e44f0b0199bee7a/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_30af0b276d76b7ac4add4d5b7ced478e.addTo(map_56586be7249f09255d3ff0e342115c7a);
+        
+    
+            var layer_control_c33983218723bbf028847ae69747af4a_layers = {
+                base_layers : {
+                    "Google Satellite" : tile_layer_23f71bbf8a9c549d7dc72a4b5c9bcf36,
+                    "Google Hybrid (\u0e21\u0e35\u0e0a\u0e37\u0e48\u0e2d\u0e2a\u0e16\u0e32\u0e19\u0e17\u0e35\u0e48)" : tile_layer_8a862c8264892aa66a6763b60505d673,
+                },
+                overlays :  {
+                    "Sentinel-2 median 2026 (\u0e1b\u0e25\u0e2d\u0e14\u0e40\u0e21\u0e06)" : tile_layer_59c813d419b08112fc57b8f3fdcbcbeb,
+                    "\u0e02\u0e2d\u0e1a\u0e40\u0e02\u0e15\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22" : tile_layer_30af0b276d76b7ac4add4d5b7ced478e,
+                },
+            };
+            let layer_control_c33983218723bbf028847ae69747af4a = L.control.layers(
+                layer_control_c33983218723bbf028847ae69747af4a_layers.base_layers,
+                layer_control_c33983218723bbf028847ae69747af4a_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_56586be7249f09255d3ff0e342115c7a);
+
+        
+</script>
+</html>
